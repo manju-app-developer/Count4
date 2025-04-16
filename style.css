@@ -1,36 +1,99 @@
 body {
-  font-family: sans-serif;
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(to bottom right, #1f1f1f, #3a3a3a);
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.game-container {
   text-align: center;
-  background: #f0f0f0;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(10px);
+}
+
+h1 {
+  margin-bottom: 10px;
+  color: #00ffc3;
+}
+
+.scoreboard {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 10px;
+}
+
+.score span {
+  font-weight: bold;
+  color: #ffd700;
+}
+
+#message {
+  margin-bottom: 10px;
+  font-size: 18px;
+  color: #ffffff;
 }
 
 #game-board {
   display: grid;
-  grid-template-columns: repeat(7, 60px);
-  grid-gap: 5px;
+  grid-template-columns: repeat(7, 70px);
+  gap: 5px;
   justify-content: center;
-  margin-top: 20px;
+  margin-bottom: 20px;
+  user-select: none;
 }
 
 .cell {
-  width: 60px;
-  height: 60px;
+  width: 70px;
+  height: 70px;
   background: #0074D9;
   border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
+  transition: transform 0.3s ease;
+  position: relative;
 }
 
-.cell.empty:hover {
-  background: #00aaff;
+.cell.empty:hover::after {
+  content: '';
+  width: 50px;
+  height: 50px;
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 50%;
+  position: absolute;
+  top: 10px;
+  left: 10px;
 }
 
 .cell.red {
-  background: red;
+  background: radial-gradient(circle at 30% 30%, #ff4d4d, #c70000);
 }
 
 .cell.yellow {
-  background: yellow;
+  background: radial-gradient(circle at 30% 30%, #fff566, #ffcc00);
+}
+
+.cell.win {
+  box-shadow: 0 0 20px 5px #00ffc3;
+  transform: scale(1.1);
+}
+
+#reset-btn {
+  padding: 10px 20px;
+  font-size: 16px;
+  background: #00ffc3;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  color: #1f1f1f;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+#reset-btn:hover {
+  background: #00cfa3;
 }
