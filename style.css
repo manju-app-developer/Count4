@@ -1,0 +1,36 @@
+body {
+  font-family: sans-serif;
+  text-align: center;
+  background: #f0f0f0;
+}
+
+#game-board {
+  display: grid;
+  grid-template-columns: repeat(7, 60px);
+  grid-gap: 5px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.cell {
+  width: 60px;
+  height: 60px;
+  background: #0074D9;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.cell.empty:hover {
+  background: #00aaff;
+}
+
+.cell.red {
+  background: red;
+}
+
+.cell.yellow {
+  background: yellow;
+}
