@@ -3,13 +3,20 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Connect Four</title>
-  <link rel="stylesheet" href="style.css">
+  <title>Connect Four - Enhanced</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <h1>Connect Four</h1>
-  <div id="game-board"></div>
-  <p id="message">Player 1's Turn (Red)</p>
+  <div class="game-container">
+    <h1>Connect Four</h1>
+    <div class="scoreboard">
+      <div id="player1" class="score">Player 1 (Red): <span>0</span></div>
+      <div id="player2" class="score">Player 2 (Yellow): <span>0</span></div>
+    </div>
+    <p id="message">Player 1's Turn (Red)</p>
+    <div id="game-board"></div>
+    <button id="reset-btn">Reset Game</button>
+  </div>
   <script src="script.js"></script>
 </body>
 </html>
